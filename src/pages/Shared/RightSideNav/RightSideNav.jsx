@@ -9,7 +9,7 @@ import qZone3 from '../../../assets/qZone3.png';
 
 const RightSideNav = () => {
     return (
-        <div className="">
+        <div className="mt-5 md:mt-0">
             {/* login */}
             <div className="flex flex-col">
                 <h2 className="text-[#403F3F] text-xl font-semibold">Login With</h2>
@@ -23,7 +23,7 @@ const RightSideNav = () => {
                 </div>
             </div>
             {/* find us */}
-            <div className="mt-4 md:mt-8">
+            <div className="mt-5 md:mt-8">
                 <h2 className="text-[#403F3F] text-xl font-semibold">Find Us On</h2>
                 <div className="mt-2 md:mt-5">
                     <div className="p-4 flex items-center gap-2 text-[18px] border rounded-t-lg">
@@ -42,12 +42,23 @@ const RightSideNav = () => {
                 </div>
             </div>
             {/* q zone */}
-            <div className="bg-[#F3F3F3] mt-2 md:mt-5">
+            <div className="bg-[#F3F3F3] mt-3 md:mt-5">
                 <h2 className="p-4 text-xl text-[#403F3F] font-semibold">Q-Zone</h2>
                 <div className="px-2">
                     <img className="w-full" src={qZone1} alt="" />
                     <img className="w-full" src={qZone2} alt="" />
                     <img className="w-full" src={qZone3} alt="" />
+                </div>
+            </div>
+            {/* create news */}
+            <div className="mt-4 md:mt-6">
+                <div className="bg-[#05001dee] px-10 md:px-8 pt-12 md:pt-16 rounded-md">
+                    <h2 className="text-[#FFFFFF] font-bold text-2xl md:text-[30px]">Create an Amazing Newspaper</h2>
+                    <p className="text-[14px] md:text-[17px] text-[#FFFFFF] mt-4 md:mt-5">Ancient Relic Found in Lost Temple, Sparks Worldwide Curiosity and Archaeological Excitement.</p>
+                    <div className="flex justify-center mt-6 md:mt-7 pb-10 md:pb-16">
+                    <button className="btn bg-[#D72050] text-white border-none -ml-4 px-8">Learn More</button>
+                    </div>
+                    
                 </div>
             </div>
         </div>
