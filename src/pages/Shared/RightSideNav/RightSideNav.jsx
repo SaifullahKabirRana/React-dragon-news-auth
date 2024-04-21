@@ -52,10 +52,10 @@ const RightSideNav = () => {
             </div>
             {/* create news */}
             <div className="mt-4 md:mt-6">
-                <div className="bg-[#05001dee] px-10 md:px-8 pt-12 md:pt-16 rounded-md">
+                <div className="bg-[linear-gradient(0.00deg,#150B2BE6,#150B2B00),url(https://i.ibb.co/cN3JppS/bg1.png)] px-10 md:px-8 pt-16 md:pt-24 rounded-md  ">
                     <h2 className="text-[#FFFFFF] font-bold text-2xl md:text-[30px]">Create an Amazing Newspaper</h2>
-                    <p className="text-[14px] md:text-[17px] text-[#FFFFFF] mt-4 md:mt-5">Ancient Relic Found in Lost Temple, Sparks Worldwide Curiosity and Archaeological Excitement.</p>
-                    <div className="flex justify-center mt-6 md:mt-7 pb-10 md:pb-16">
+                    <p className="text-[14px] md:text-[17px] text-[#FFFFFF] mt-6 md:mt-8">Ancient Relic Found in Lost Temple, Sparks Worldwide Curiosity and Archaeological Excitement.</p>
+                    <div className="flex justify-center mt-8 md:mt-10 pb-14 md:pb-20">
                     <button className="btn bg-[#D72050] text-white border-none -ml-4 px-8">Learn More</button>
                     </div>
                     
