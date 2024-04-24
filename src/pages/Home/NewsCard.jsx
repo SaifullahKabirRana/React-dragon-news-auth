@@ -5,20 +5,20 @@ import { FaStar } from "react-icons/fa";
 import { IoEye } from "react-icons/io5";
 import { Link } from 'react-router-dom';
 
-const News = ({ news }) => {
-    const { rating,  total_view, title, author, image_url, details, _id } = news;
+const NewsCard = ({ news }) => {
+    const { rating, total_view, title, author, image_url, details, _id } = news;
     return (
         <div>
             <div className='bg-[#F3F3F3] flex justify-between p-3 md:p-5 '>
                 <div className=' flex gap-3 '>
                     <div className="avatar">
-                        <div className="w-8 md:w-12 rounded-full">
+                        <div className="w-10 md:w-12 rounded-full">
                             <img src={author.img} />
                         </div>
                     </div>
                     <div>
-                        <h2 className='text-[#403F3F] text-[16px] font-semibold'>{author.name}</h2>
-                        <p className='text-[#706F6F] text-[14px]'>{author.published_date}</p>
+                        <h2 className='text-[#403F3F] text-[14px] md:text-[16px] font-semibold'>{author.name}</h2>
+                        <p className='text-[#706F6F] text-[12px] md:text-[14px]'>{author.published_date}</p>
                     </div>
                 </div>
                 <div className='flex gap-2 items-center text-[16px] md:text-lg text-[#706F6F]'>
@@ -33,10 +33,10 @@ const News = ({ news }) => {
                     {/* <p className='mt-4 md:mt-7 '>{details}</p> */}
                     <div className='text-[#706F6F] text-[16px] font-medium mt-4 md:mt-7 '>
                         {
-                            details.length > 200? 
-                            <p>{details.slice(0, 200)} <Link to={`/news/${_id}`} className='font-semibold bg-gradient-to-r from-[#FF8C47] to-[#F75B5F] inline-block text-transparent bg-clip-text'>Read More...</Link></p>
-                            :
-                            <p>{details}</p>
+                            details.length > 200 ?
+                                <p>{details.slice(0, 200)} <Link to={`/news/${_id}`} className='font-semibold bg-gradient-to-r from-[#FF8C47] to-[#F75B5F] inline-block text-transparent bg-clip-text'>Read More...</Link></p>
+                                :
+                                <p>{details}</p>
                         }
                     </div>
                     <hr className='mt-2 md:mt-5 mb-3 md:mb-6 border-[#E7E7E7]' />
@@ -52,19 +52,18 @@ const News = ({ news }) => {
                             <p>{rating.number}</p>
                         </div>
                         <div className='text-[18px] text-[#706F6F] flex gap-2 items-center'>
-                            <IoEye className='text-xl'></IoEye> 
+                            <IoEye className='text-xl'></IoEye>
                             <p>{total_view}</p>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     );
 };
 
-News.propTypes = {
-    news: PropTypes.object.isRequired,
+NewsCard.propTypes = {
+    news: PropTypes.object.isRequired
 };
 
-export default News;
+export default NewsCard;
