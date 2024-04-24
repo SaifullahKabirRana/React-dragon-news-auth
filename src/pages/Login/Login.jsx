@@ -6,7 +6,7 @@ const Login = () => {
         e.preventDefault();
         console.log(e.currentTarget);
         const form = new FormData(e.currentTarget);
-        console.log(form.get('email'));
+        console.log(form.get('password'))
         
     }
     return (
@@ -35,7 +35,7 @@ const Login = () => {
                             <button className="btn bg-[#403F3F] text-white text-xl font-semibold">Login</button>
                         </div>
                     </form>
-                    <p className="text-center text-[#706F6F] text-[16px] font-semibold">Do not have an account? <Link className="bg-gradient-to-r from-[#FF8C47] to-[#F75B5F] inline-block text-transparent bg-clip-text">Register</Link></p>
+                    <p className="text-center text-[#706F6F] text-[16px] font-semibold">Do not have an account? <Link to='/register' className="bg-gradient-to-r from-[#FF8C47] to-[#F75B5F] inline-block text-transparent bg-clip-text">Register</Link></p>
                 </div>
             </div>
         </div>
