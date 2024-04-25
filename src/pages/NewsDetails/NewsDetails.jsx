@@ -8,8 +8,8 @@ const NewsDetails = () => {
     const news = useLoaderData();
     const { _id } = useParams();
     const sNews = news.find(sNews => sNews._id == _id);
-    console.log(sNews);
-    console.log(_id);
+    // console.log(sNews);
+    // console.log(_id);
     
 
     return (
