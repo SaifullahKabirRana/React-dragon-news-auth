@@ -9,6 +9,7 @@ const News = ({ news }) => {
     const { rating,  total_view, title, author, image_url, details, _id } = news;
     return (
         <div>
+            
             <div className='bg-[#F3F3F3] flex justify-between p-3 md:p-5 '>
                 <div className=' flex gap-3 '>
                     <div className="avatar">

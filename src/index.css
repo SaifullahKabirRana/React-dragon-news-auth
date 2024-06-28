@@ -8,3 +8,7 @@
 .poppins-font{
     font-family: "Poppins", sans-serif;
 }
+
+#nav Link.active {
+    background-color: red;
+}

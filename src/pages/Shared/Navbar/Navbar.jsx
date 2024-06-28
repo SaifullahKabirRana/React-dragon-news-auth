@@ -4,8 +4,11 @@ import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const Navbar = () => {
-    const { user, logOut } = useContext(AuthContext);
+    const { user, logOut, loading } = useContext(AuthContext);
 
+    if(loading){
+        return <div className="flex justify-center items-center mt-[200px] md:mt-[400px]"><span className="loading loading-spinner loading-lg"></span></div>
+    }
     const handleLogOut = () => {
         logOut()
             .then()
@@ -21,6 +24,8 @@ const Navbar = () => {
 
     return (
         <div className="mt-4 md:mt-8 -mx-4 md:-mx-0">
+            {user && <p>{user.
+                displayName}</p>}
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -41,7 +46,11 @@ const Navbar = () => {
                 <div className="navbar-end">
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                         <div className="w-8 md:w-10 rounded-full ">
-                            <img alt="Tailwind CSS Navbar component" src={userDefaultPic} />
+                            {user ?
+                                <img className="border-2 p-[2px] border-black rounded-full" alt="image" src={user.photoURL} />
+                                :
+                                <img alt="image" src={userDefaultPic} />
+                            }
                         </div>
                     </div>
                     {

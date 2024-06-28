@@ -2,9 +2,11 @@ import { Link } from "react-router-dom";
 import Navbar from "../Shared/Navbar/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import { getAuth, updateProfile } from "firebase/auth";
 
 const Register = () => {
     const { createUser } = useContext(AuthContext);
+    const auth = getAuth();
 
     const handleRegister = e => {
         e.preventDefault();
@@ -18,17 +20,23 @@ const Register = () => {
 
         // create user
         createUser(email, password)
-        .then(result => {
-            console.log(result.user);
-        })
-        .catch(error => {
-            console.error(error);
-        })
+            .then(result => {
+                console.log(result.user);
+                updateProfile(auth.currentUser, { displayName: name, photoURL: photo })
+                    .then()
+                    .catch(error => {
+                        console.log(error)
+                    });
+            })
+            .catch(error => {
+                console.error(error);
+            })
 
     }
     return (
         <div>
             <Navbar></Navbar>
+
             <div className="mt-12 md:mt-28 bg-[#F3F3F3] pt-7 md:pt-16 pb-7 md:pb-16 rounded-md md:max-w-[750px] mx-auto">
                 <h2 className="text-[#403F3F] text-[22px] md:text-[30px] text-center font-semibold">Register your account</h2>
                 <div className="md:w-3/4 mx-auto">

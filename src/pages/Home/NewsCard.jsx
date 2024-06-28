@@ -4,13 +4,20 @@ import { IoShareSocial } from "react-icons/io5";
 import { FaStar } from "react-icons/fa";
 import { IoEye } from "react-icons/io5";
 import { Link } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 
 const NewsCard = ({ news }) => {
     const { rating, total_view, title, author, image_url, details, _id } = news;
     return (
-        <div>
+        <div data-aos="fade-up" 
+         data-aos-delay="500"
+        >
+            
             <div className='bg-[#F3F3F3] flex justify-between p-3 md:p-5 '>
-                <div className=' flex gap-3 '>
+                <div   data-aos="fade-right" data-aos-delay="500" className=' flex gap-3 '>
                     <div className="avatar">
                         <div className="w-10 md:w-12 rounded-full">
                             <img src={author.img} />
@@ -26,7 +33,7 @@ const NewsCard = ({ news }) => {
                     <IoShareSocial></IoShareSocial>
                 </div>
             </div>
-            <div className='border border-[#E7E7E7] rounded-md rounded-t-none border-t-0'>
+            <div data-aos="fade-left" data-aos-delay="500" className='border border-[#E7E7E7] rounded-md rounded-t-none border-t-0'>
                 <div className='px-5'>
                     <h2 className='text-[17px] md:text-xl text-[#403F3F] font-bold pt-2 md:pt-4 mb-3 md:mb-5'>{title}</h2>
                     <img className='w-full' src={image_url} alt="" />
