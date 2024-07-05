@@ -5,17 +5,20 @@ import { FaTwitter } from "react-icons/fa";
 import qZone1 from '../../../assets/qZone1.png';
 import qZone2 from '../../../assets/qZone2.png';
 import qZone3 from '../../../assets/qZone3.png';
+import { useContext } from "react";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 
 const RightSideNav = () => {
+    const { googleLogin } = useContext(AuthContext);
     return (
         <div className="mt-5 md:mt-0">
             {/* login */}
             <div className="flex flex-col">
                 <h2 className="text-[#403F3F] text-xl font-semibold">Login With</h2>
-                <div className="btn btn-outline btn-info mt-3 md:mt-5 mb-2 md:mb-3 text-[16px]">
+                <div onClick={() => googleLogin()} className="btn btn-outline btn-info mt-3 md:mt-5 mb-2 md:mb-3 text-[16px]">
                     <FaGoogle></FaGoogle>
-                    <button>Login with Google</button>
+                    <button  >Login with Google</button>
                 </div>
                 <div className="btn btn-outline text-[16px]">
                     <FaGithub></FaGithub>
@@ -56,9 +59,9 @@ const RightSideNav = () => {
                     <h2 className="text-[#FFFFFF] font-bold text-2xl md:text-[30px]">Create an Amazing Newspaper</h2>
                     <p className="text-[14px] md:text-[17px] text-[#FFFFFF] mt-6 md:mt-8">Ancient Relic Found in Lost Temple, Sparks Worldwide Curiosity and Archaeological Excitement.</p>
                     <div className="flex justify-center mt-8 md:mt-10 pb-14 md:pb-20">
-                    <button className="btn bg-[#D72050] text-white border-none -ml-4 px-8">Learn More</button>
+                        <button className="btn bg-[#D72050] text-white border-none -ml-4 px-8">Learn More</button>
                     </div>
-                    
+
                 </div>
             </div>
         </div>

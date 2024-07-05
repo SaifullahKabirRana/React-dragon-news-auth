@@ -4,11 +4,8 @@ import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const Navbar = () => {
-    const { user, logOut, loading } = useContext(AuthContext);
+    const { user, logOut} = useContext(AuthContext);
 
-    if(loading){
-        return <div className="flex justify-center items-center mt-[200px] md:mt-[400px]"><span className="loading loading-spinner loading-lg"></span></div>
-    }
     const handleLogOut = () => {
         logOut()
             .then()
